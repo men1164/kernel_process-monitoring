@@ -8,3 +8,5 @@
 
 ### How to install and compile a new kernel
 You can install and test a new kernel in the same way as this [link.](https://dev.to/jasper/adding-a-system-call-to-the-linux-kernel-5-8-1-in-ubuntu-20-04-lts-2ga8)
+
+> *Note*: This code and all the imported library needs to run on Linux and Kernel mode only.
