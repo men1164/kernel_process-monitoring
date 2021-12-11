@@ -6,6 +6,7 @@
 #include <linux/ktime.h>
 #include <linux/slab.h>
 #include <linux/gfp.h>
+#include <linux/syscalls.h>
 
 ///< The license type -- this affects runtime behavior
 MODULE_LICENSE("GPL");
