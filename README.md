@@ -1,4 +1,11 @@
 # Mini-project: Threads API and Concurrency
+Group 7
+- Krittin Srithong
+- Kittipol Neamprasertporn
+- Chayaphon Bunyakan
+- Thanasit Suwanposri
+- Pirada Amornprapawat
+- Siriphorn Jarisu
 
 ## Requirements
 - List all foreground processes in a system sorted by CPU utilization
