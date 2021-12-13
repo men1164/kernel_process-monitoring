@@ -124,35 +124,33 @@ void insertIntoSorted(node **sorted_ref, node *new_node)
 }
   
 // Main Function  
-SYSCALL_DEFINE0(project)
-{
-    struct task_struct *task;
-    head = NULL;
-    for_each_process(task)
-    {
-        long long int process_time;
-        long long int waiting_time;
-        long long int cpu_usage;
-        s64  uptime;
-        long long int running_time;
-        long starttime = (task->start_time) / 1000000; // from nano second to ms
+SYSCALL_DEFINE0(project) {
+	struct task_struct *task;
+	head = NULL;
+	for_each_process(task) {
+		long long int process_time;
+		long long int waiting_time;
+		long long int cpu_usage;
+		s64  uptime;
+		long long int running_time;
+		long starttime = (task->start_time) / 1000000; // from nano second to ms
 
-        running_time = ((task->utime) +  (task->stime)) / 1000000; // from nano second to ms
+		running_time = ((task->utime) +  (task->stime)) / 1000000; // from nano second to ms
 
-        uptime = ktime_to_ms(ktime_get_boottime()); // In ms
+		uptime = ktime_to_ms(ktime_get_boottime()); // In ms
 
-        process_time = uptime - ((long long int)starttime); // Total Process time in ms
-
+		process_time = uptime - ((long long int)starttime); // Total Process time in ms
+		
 		waiting_time = process_time - running_time; // waiting time in ms
         
-        cpu_usage = (running_time * 1000000) / process_time; // x10^-4 percent
+		cpu_usage = (running_time * 1000000) / process_time; // x10^-4 percent
 
         // push to linked list
-        push(&head,task->pid,task->__state,running_time,waiting_time,process_time,cpu_usage,task->comm);
+		push(&head,task->pid,task->__state,running_time,waiting_time,process_time,cpu_usage,task->comm);
     }
-    insertionSort(&head); // sort
-    printList(head); // print
+	insertionSort(&head); // sort
+	printList(head); // print
 
-    return 0;
+	ßreturn 0;
 }
   
