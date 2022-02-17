@@ -2,7 +2,7 @@
 Group 7
 - Krittin Srithong
 - Kittipol Neamprasertporn
-- Chayaphon Bunyaka
+- Chayaphon Bunyakan
 - Thanasit Suwanposri
 - Pirada Amornprapawat
 - Siriphorn Jarisu
